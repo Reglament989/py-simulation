@@ -10,12 +10,14 @@ class Human(Base):
     id = Column(Integer, primary_key=True)
 
     age = Column(Integer)
-    family = Column(String)
+    # family = Column(String)
     job = Column(String)
-    wealth = Column(String)
+    wealth = Column(Integer)
     country = Column(String)
-    sity = Column(String)
+    # sity = Column(String)
     state = Column(String)
 
     def __repr__(self):
         return '<Human(age="{}", state="{}">'.format(self.age, self.state)
+
+    types_of_work = ['dangerous', 'safe', 'average']

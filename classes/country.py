@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Column, Integer, Bool
+from sqlalchemy import create_engine, Column, Integer, String
 
 Base = declarative_base()
 
@@ -20,8 +20,33 @@ class Country(Base):
     recovered = Column(Integer)
 
     def __repr__(self):
-        return '<Country(name="{}", humans="{}", carriers="{}", dead="{}", recovered="{}">'.format(self.name,
+        return '''
+<Country(name="{}",
+    humans="{}",
+    condition="{}",
+    medicine="{}",
+    citis="{}",
+    carriers="{}",
+    dead="{}",
+    recovered="{}">'''.format(self.name,
             self.humans,
+            self.condition,
+            self.medicine,
+            self.citis,
             self.carriers,
             self.dead,
             self.recovered)
+
+
+    name_countres = [
+        'Russia',
+        'USA',
+        'Poland',
+        'Germany',
+        'China',
+        'UAE',
+        'Japan',
+        'Corea',
+        'Australia',
+        'Netherlands',
+    ]

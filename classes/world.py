@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Column, Integer, Bool
+from sqlalchemy import create_engine, Column, Integer, String
 
 Base = declarative_base()
 
@@ -16,9 +16,12 @@ class World(Base):
     year = Column(Integer)
     dead = Column(Integer)
     recovered = Column(Integer)
+    counters = Column(Integer)
+    state = Column(String)
 
     def __repr__(self):
-        return '<World(humans="{}", carriers="{}", dead="{}", recovered="{}">'.format(self.humans,
+        return '<World(humans="{}", carriers="{}", dead="{}", recovered="{}", state="{}">'.format(self.humans,
             self.carriers,
             self.dead,
-            self.recovered)
+            self.recovered,
+            self.state)
